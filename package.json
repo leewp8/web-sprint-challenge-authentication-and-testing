@@ -6,7 +6,7 @@
     "start": "node index.js",
     "server": "nodemon index.js",
     "migrate": "knex migrate:latest",
-    "test": "cross-env NODE_ENV=testing jest --verbose --runInBand --silent --detectOpenHandles --forceExit"
+    "test": "cross-env NODE_ENV=testing jest --config ./jest.config.js --forceExit --verbose --runInBand --silent "
   },
   "repository": {
     "type": "git",
