@@ -4,13 +4,13 @@ const db = require('../data/dbConfig')
 const router = require('./auth/auth-router')
 
 
+
 beforeAll(async () => {
   await db.migrate.rollback();  // npx knex migrate:rollback
   await db.migrate.latest();    // npx knex migrate:latest
 });
 
 beforeEach(async () => {
-  await db('users').truncate()
   await db('users')
 });
 
