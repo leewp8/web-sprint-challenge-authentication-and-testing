@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 const checkUsernameExists = require('../middleware/username-exist.js')
 const usernameTaken = require('../middleware/username-taken')
 const bodyRequired = require('../middleware/body-required')
@@ -86,8 +87,7 @@ router.post('/login', bodyRequired, checkUsernameExists, (req, res, next) => {
 
 function buildToken(user) {
   const payload = {
-    subject: user.user_id,
-    role_name: user.role_name,
+    subject: user.id,
     username: user.username,
   }
   const options = {
