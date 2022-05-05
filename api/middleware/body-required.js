@@ -1,9 +1,8 @@
 
 
 module.exports = async (req, res, next) => {
-
     try {
-        const { username, password } = req.body
+        const { username, password } = await req.body
         if (!username || !password) {
             next({ message: 'username and password required' })
         } else {
@@ -12,5 +11,4 @@ module.exports = async (req, res, next) => {
     } catch (err) {
         next(err)
     }
-
 }
