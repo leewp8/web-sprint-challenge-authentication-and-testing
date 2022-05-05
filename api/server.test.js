@@ -19,17 +19,6 @@ test('make sure our environment is set correctly', () => {
   expect(process.env.NODE_ENV).toBe('testing');
 });
 
-test('sanity', () => {
-  expect(true).toBe(true)
-})
-
-// describe('[POST] Register user', () => {
-//   test('responds with a 422 if payload incorrect', async () => {
-//     const res = await request(server).post('/api/auth/register').send({})
-//     expect(res.status).toBe(422)
-//   })
-// })
-
 
 describe('[POST] register user', () => {
     test('registering new user returns a status 201', async () => {
